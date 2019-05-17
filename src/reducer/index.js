@@ -1,14 +1,23 @@
-const initialState = {
-  todos: []
-}
+import initialState from '../constants/defaults';
+import {
+  SET_BRICK_DIMENSIONS,
+  SET_CANVAS_DIMENSIONS,
+  SET_LINE_THICKNESS,
+  SAVE_IMAGE
+} from '../actions';
 
-export default function reducer(state, action) {
-  if (typeof state === 'undefined') {
-    return initialState
+export default function reducer(state = initialState, action) {
+  console.log(state);
+  switch (action.type) {
+    case SET_BRICK_DIMENSIONS:
+      return state;
+    case SET_CANVAS_DIMENSIONS:
+      return state;
+    case SET_LINE_THICKNESS:
+      return state;
+    case SAVE_IMAGE:
+      return state;
+    default:
+      return state;
   }
-
-  // For now, don't handle any actions
-  // and just return the state given to us.
-  return state
 }
-
