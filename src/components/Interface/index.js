@@ -1,7 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import BrickDimensions from './BrickDimensions';
-export default class extends Component {
-  render() {
-    return <BrickDimensions>test</BrickDimensions>;
-  }
-}
+import CanvasDimensions from './CanvasDimensions';
+
+export default () => (
+  <div>
+    <BrickDimensions />
+    <CanvasDimensions />
+  </div>
+);

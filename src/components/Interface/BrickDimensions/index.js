@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import BrickSelector from './BrickSelector';
 
-export default class extends Component {
-  render() {
-    return <div>Brick Dimensions</div>;
-  }
-}
+const BrickDimensions = props => <BrickSelector {...props} />;
+
+const mapStateToProps = ({
+  brickHeight,
+  brickWidth,
+  brickMortar,
+  brickDimensionsPopup
+}) => ({
+  brickHeight,
+  brickWidth,
+  brickMortar,
+  brickDimensionsPopup
+});
+
+export default connect(mapStateToProps)(BrickDimensions);

@@ -6,10 +6,12 @@
 import brickDimensions from './brickDimensions';
 
 export default {
-  brickHeight: brickDimensions.standard.height,
-  brickWidth: brickDimensions.standard.width,
-  brickMortar: brickDimensions.standard.mortar,
+  brickHeight: brickDimensions.Standard.height,
+  brickWidth: brickDimensions.Standard.width,
+  brickMortar: brickDimensions.Standard.mortar,
   canvasHeight: 800,
   canvasWidth: 1000,
-  lineThickness: 1
+  lineThickness: 1,
+  brickDimensionsPopup: false,
+  canvasDimensionsPopup: false
 };
