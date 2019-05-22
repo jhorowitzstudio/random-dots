@@ -5,6 +5,7 @@ export const SET_CANVAS_DIMENSIONS = 'SET_CANVAS_DIMENSIONS';
 export const TOGGLE_TRIM = 'TOGGLE_TRIM';
 export const SET_COLOR = 'SET_COLOR';
 export const SAVE_IMAGE = 'SAVE_IMAGE';
+export const SET_COLOR_MODE = 'SET_COLOR_MODE';
 
 
 export function toggleBrickDimensionsPopup() {
@@ -45,6 +46,13 @@ export function setColor({name, color}) {
     type: SET_COLOR,
     payload: { name, color }
   };
+}
+
+export function setColorMode(mode) {
+  return {
+    type: SET_COLOR_MODE,
+    payload: mode
+  }
 }
 
 export function saveImage() {

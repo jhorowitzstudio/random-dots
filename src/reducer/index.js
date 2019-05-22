@@ -6,6 +6,7 @@ import {
   SET_CANVAS_DIMENSIONS,
   TOGGLE_TRIM,
   SET_COLOR,
+  SET_COLOR_MODE,
   SAVE_IMAGE
 } from '../actions';
 
@@ -32,6 +33,8 @@ export default function reducer(state = initialState, action) {
       return { ...state, [action.payload]: !state[action.payload] };
     case SET_COLOR:
       return { ...state, [action.payload.name]: action.payload.color };
+    case SET_COLOR_MODE:
+      return { ...state, colorMode: action.payload };
     case SAVE_IMAGE:
       return state;
     default:

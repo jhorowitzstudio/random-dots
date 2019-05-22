@@ -1,9 +1,12 @@
-// export const SET_BRICK_DIMENSIONS = 'SET_BRICK_DIMENSIONS';
-// export const SET_CANVAS_DIMENSIONS = 'SET_CANVAS_DIMENSIONS';
-// export const SET_LINE_THICKNESS = 'SET_LINE_THICKNESS';
-// export const SAVE_IMAGE = 'SAVE_IMAGE';
-
 import brickDimensions from './brickDimensions';
+
+export const colorModes = {
+  rgb: '',
+  lab: '',
+  lrgb: '',
+  hsl: '',
+  lch: ''
+};
 
 export default {
   brickHeight: brickDimensions.Standard.height,
@@ -16,6 +19,7 @@ export default {
   canvasDimensionsPopup: false,
   firstColor: '#000000',
   secondColor: '#FFFFFF',
+  colorMode: 'rgb',
   trimHeight: true,
   trimWidth: true
 };

@@ -16,7 +16,10 @@ const mapStateToProps = ({
   brickWidth,
   brickMortar,
   trimHeight,
-  trimWidth
+  trimWidth,
+  firstColor,
+  secondColor,
+  colorMode
 }) => ({
   canvasHeight,
   canvasWidth,
@@ -24,7 +27,10 @@ const mapStateToProps = ({
   brickWidth,
   brickMortar,
   trimHeight,
-  trimWidth
+  trimWidth,
+  firstColor,
+  secondColor,
+  colorMode
 });
 
 export default connect(mapStateToProps)(ColorPickersContainer);

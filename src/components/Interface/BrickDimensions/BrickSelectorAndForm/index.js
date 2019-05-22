@@ -65,6 +65,7 @@ export default class extends Component {
           handleChange={this.handleSelectChange}
           value={value}
           options={brickDimensions}
+          custom
         />
         {brickDimensionsPopup && (
           <form onSubmit={this.submitForm}>
