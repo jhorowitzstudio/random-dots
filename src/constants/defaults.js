@@ -13,5 +13,9 @@ export default {
   canvasWidth: 1000,
   lineThickness: 1,
   brickDimensionsPopup: false,
-  canvasDimensionsPopup: false
+  canvasDimensionsPopup: false,
+  firstColor: '#000000',
+  secondColor: '#FFFFFF',
+  trimHeight: true,
+  trimWidth: true
 };

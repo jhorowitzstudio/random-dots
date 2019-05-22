@@ -2,8 +2,10 @@ export const TOGGLE_BRICK_POPUP = 'TOGGLE_BRICK_POPUP';
 export const TOGGLE_CANVAS_POPUP = 'TOGGLE_CANVAS_POPUP';
 export const SET_BRICK_DIMENSIONS = 'SET_BRICK_DIMENSIONS';
 export const SET_CANVAS_DIMENSIONS = 'SET_CANVAS_DIMENSIONS';
-export const SET_LINE_THICKNESS = 'SET_LINE_THICKNESS';
+export const TOGGLE_TRIM = 'TOGGLE_TRIM';
+export const SET_COLOR = 'SET_COLOR';
 export const SAVE_IMAGE = 'SAVE_IMAGE';
+
 
 export function toggleBrickDimensionsPopup() {
   return {
@@ -31,10 +33,17 @@ export function setCanvasDimensions(dimensions) {
   };
 }
 
-export function setLineThickness(thickness) {
+export function toggleTrim(name) {
   return {
-    type: SET_LINE_THICKNESS,
-    payload: thickness
+    type: TOGGLE_TRIM,
+    payload: name
+  }
+}
+
+export function setColor({name, color}) {
+  return {
+    type: SET_COLOR,
+    payload: { name, color }
   };
 }
 

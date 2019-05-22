@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import BrickSelector from './BrickSelector';
+import BrickSelectorAndForm from './BrickSelectorAndForm';
 
-const BrickDimensions = props => <BrickSelector {...props} />;
+const BrickDimensions = props => <BrickSelectorAndForm {...props} />;
 
 const mapStateToProps = ({
   brickHeight,

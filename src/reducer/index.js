@@ -4,12 +4,12 @@ import {
   TOGGLE_CANVAS_POPUP,
   SET_BRICK_DIMENSIONS,
   SET_CANVAS_DIMENSIONS,
-  SET_LINE_THICKNESS,
+  TOGGLE_TRIM,
+  SET_COLOR,
   SAVE_IMAGE
 } from '../actions';
 
 export default function reducer(state = initialState, action) {
-  console.log(state);
   switch (action.type) {
     case TOGGLE_BRICK_POPUP:
       return { ...state, brickDimensionsPopup: !state.brickDimensionsPopup };
@@ -28,8 +28,10 @@ export default function reducer(state = initialState, action) {
         canvasHeight: action.payload.height || state.canvasHeight,
         canvasWidth: action.payload.width || state.canvasWidth
       };
-    case SET_LINE_THICKNESS:
-      return { ...state, lineThickness: action.payload.lineThickness };
+    case TOGGLE_TRIM:
+      return { ...state, [action.payload]: !state[action.payload] };
+    case SET_COLOR:
+      return { ...state, [action.payload.name]: action.payload.color };
     case SAVE_IMAGE:
       return state;
     default:

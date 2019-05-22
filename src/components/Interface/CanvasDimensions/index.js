@@ -1,3 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import CanvasForm from './CanvasForm';
 
-export default () => <div>Canvas Dimensions</div>;
+const CanvasDimensions = props => <CanvasForm {...props} />;
+
+const mapStateToProps = ({
+  canvasHeight,
+  canvasWidth,
+  trimHeight,
+  trimWidth
+}) => ({
+  canvasHeight,
+  canvasWidth,
+  trimHeight,
+  trimWidth
+});
+
+export default connect(mapStateToProps)(CanvasDimensions);
