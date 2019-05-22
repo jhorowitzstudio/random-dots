@@ -21,5 +21,5 @@ export default {
   secondColor: '#FFFFFF',
   colorMode: 'rgb',
   trimHeight: true,
-  trimWidth: true
+  trimWidth: true,
 };
