@@ -1,4 +1,4 @@
-import initialState from '../constants/defaults';
+import { initialState } from '../constants/defaults';
 import {
   TOGGLE_BRICK_POPUP,
   TOGGLE_CANVAS_POPUP,
@@ -7,7 +7,9 @@ import {
   TOGGLE_TRIM,
   SET_COLOR,
   SET_COLOR_MODE,
-  SAVE_IMAGE
+  SAVE_IMAGE,
+  SET_COLOR_HUE_MODE,
+  SET_HSL
 } from '../actions';
 
 export default function reducer(state = initialState, action) {
@@ -33,8 +35,12 @@ export default function reducer(state = initialState, action) {
       return { ...state, [action.payload]: !state[action.payload] };
     case SET_COLOR:
       return { ...state, [action.payload.name]: action.payload.color };
+    case SET_HSL:
+      return { ...state, [action.payload.name]: action.payload.value}
     case SET_COLOR_MODE:
       return { ...state, colorMode: action.payload };
+    case SET_COLOR_HUE_MODE:
+      return { ...state, colorHueMode: action.payload };
     case SAVE_IMAGE:
       return state;
     default:

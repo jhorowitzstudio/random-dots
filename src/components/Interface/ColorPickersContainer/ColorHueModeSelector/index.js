@@ -1,25 +1,24 @@
 import React from 'react';
-import { colorModes } from '../../../../constants/defaults';
-import { setColorMode } from '../../../../actions';
+import { colorHueModes } from '../../../../constants/defaults';
+import { setColorHueMode } from '../../../../actions';
 import Select from '../../../Common/Select';
 
 export default class Component extends React.Component {
   handleSelectChange = event => {
     const { dispatch } = this.props;
     const { value } = event.target;
-    dispatch(setColorMode(value));
+    dispatch(setColorHueMode(value));
   };
 
   render() {
-    const { colorMode, colorHueMode } = this.props;
+    const { colorHueMode } = this.props;
     return (
       <div>
-        Color Scale Method
+          Color Mode
         <Select
-          disabled={colorHueMode !== 'rgb'}
           handleChange={this.handleSelectChange}
-          value={colorMode}
-          options={colorModes}
+          value={colorHueMode}
+          options={colorHueModes}
         />
       </div>
     );

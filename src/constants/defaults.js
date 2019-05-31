@@ -8,7 +8,14 @@ export const colorModes = {
   lch: ''
 };
 
-export default {
+export const colorHueModes = {
+  rgb: '',
+  "random hex": '',
+  "random hsl": '',
+}
+
+
+export const initialState = {
   brickHeight: brickDimensions.Standard.height,
   brickWidth: brickDimensions.Standard.width,
   brickMortar: brickDimensions.Standard.mortar,
@@ -19,6 +26,9 @@ export default {
   canvasDimensionsPopup: false,
   firstColor: '#000000',
   secondColor: '#FFFFFF',
+  saturation: .8,
+  lightness: .75,
+  colorHueMode: 'rgb',
   colorMode: 'rgb',
   trimHeight: true,
   trimWidth: true,

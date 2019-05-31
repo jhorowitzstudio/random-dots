@@ -1,5 +1,5 @@
+/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
-import xmlserializer from 'xmlserializer';
 import brickLayer from '../../../helpers/brickLayer';
 import {
   trimCanvasWidth,
@@ -7,24 +7,6 @@ import {
 } from '../../../helpers/canvasSizeCorrector';
 
 export default class extends Component {
-  save = () => {
-    const svg = document.getElementById('brickwall');
-    const serializer = new XMLSerializer();
-    const svgBlob = new Blob([serializer.serializeToString(svg)], {
-      type: 'image/svg+xml'
-    });
-    const url = URL.createObjectURL(svgBlob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'brickwall.svg';
-    link.innerHTML = 'Click to download';
-    link.onclick = () => {
-      document.getElementById('download-div').innerHTML = '';
-    };
-    document.getElementById('download-div').innerHTML = '';
-    document.getElementById('download-div').appendChild(link);
-  };
-
   render() {
     const {
       brickHeight,
@@ -33,8 +15,12 @@ export default class extends Component {
       trimHeight,
       trimWidth,
       firstColor,
+      saturation,
+      lightness,
       secondColor,
-      colorMode
+      colorMode,
+      colorHueMode,
+      save
     } = this.props;
     let { canvasHeight, canvasWidth } = this.props;
     if (trimHeight)
@@ -43,7 +29,7 @@ export default class extends Component {
       canvasWidth = trimCanvasWidth(canvasWidth, brickWidth, brickMortar);
     return (
       <div>
-        <button type="submit" onClick={this.save}>
+        <button type="submit" onClick={save}>
           Generate Download Link
         </button>
         <span id="download-div" />
@@ -55,6 +41,7 @@ export default class extends Component {
             Brick Dimensions: {brickWidth} x {brickHeight} height, with a{' '}
             {brickMortar} mortar
           </p>
+            <button type="submit" onClick={()=> this.setState({ _: Math.random() })}>Refresh</button>
         </div>
         <svg
           id="brickwall"
@@ -70,13 +57,16 @@ export default class extends Component {
             brickMortar,
             firstColor,
             secondColor,
+            saturation,
+            lightness,
+            colorHueMode,
             colorMode
           }).map(({ x, y, fill }) => (
             <rect
               className="brick"
               width={brickWidth}
               height={brickHeight}
-              key={`${x}${y}`}
+              key={`${x}+${y}`}
               x={x}
               y={y}
               fill={fill}

@@ -1,23 +1,32 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ColorPicker from './ColorPicker';
 import ColorModeSelector from './ColorModeSelector';
+import ColorHueModeSelector from './ColorHueModeSelector';
+import ColorPickersOptions from './ColorPickersOptions';
 
 const ColorPickersContainer = props => (
   <div>
     <h2>Colors</h2>
+    <ColorHueModeSelector {...props} />
     <ColorModeSelector {...props} />
-    <div style={{ display: 'flex' }}>
-      <ColorPicker colorName="firstColor" {...props} />
-      <ColorPicker colorName="secondColor" {...props} />
-    </div>
+    <ColorPickersOptions {...props} />
   </div>
 );
 
-const mapStateToProps = ({ firstColor, secondColor, colorMode }) => ({
+const mapStateToProps = ({
   firstColor,
   secondColor,
-  colorMode
+  saturation,
+  lightness,
+  colorMode,
+  colorHueMode
+}) => ({
+  firstColor,
+  secondColor,
+  saturation,
+  lightness,
+  colorMode,
+  colorHueMode
 });
 
 export default connect(mapStateToProps)(ColorPickersContainer);

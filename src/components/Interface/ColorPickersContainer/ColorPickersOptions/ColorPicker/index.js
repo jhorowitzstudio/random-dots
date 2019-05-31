@@ -1,6 +1,6 @@
 import React from 'react';
 import { PhotoshopPicker } from 'react-color';
-import { setColor } from '../../../../actions';
+import { setColor } from '../../../../../actions';
 
 export default class Component extends React.Component {
   handleOnChangeComplete = color => {
