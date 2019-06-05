@@ -1,7 +1,10 @@
 import React from 'react';
 import { PhotoshopPicker } from 'react-color';
 import { setColor } from '../../../../../actions';
-import { StyledPhotoshopPickerDivContainer } from './styles';
+
+const styles = {
+  container: { marginRight: 20 }
+};
 
 export default class Component extends React.Component {
   handleOnChangeComplete = color => {
@@ -14,13 +17,13 @@ export default class Component extends React.Component {
     const color = this.props[this.props.colorName];
     const { header } = this.props;
     return (
-      <StyledPhotoshopPickerDivContainer>
+      <div style={styles.container}>
         <PhotoshopPicker
           header={header}
           color={color}
           onChangeComplete={this.handleOnChangeComplete}
         />
-      </StyledPhotoshopPickerDivContainer>
+      </div>
     );
   }
 }

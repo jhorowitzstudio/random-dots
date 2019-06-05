@@ -1,11 +1,16 @@
 import React from 'react';
-import './styles/App.css';
 import Interface from './components/Interface';
 import CanvasContainer from './components/CanvasContainer';
 
+const styles = {
+  App: {
+    margin: 15
+  }
+};
+
 function App() {
   return (
-    <div className="App">
+    <div style={styles.App} className="App">
       <header>
         <h1>Brick Generator</h1>
       </header>
