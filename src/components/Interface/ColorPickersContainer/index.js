@@ -18,6 +18,7 @@ const mapStateToProps = ({
   secondColor,
   saturation,
   lightness,
+  colorArray,
   colorMode,
   colorHueMode
 }) => ({
@@ -25,6 +26,7 @@ const mapStateToProps = ({
   secondColor,
   saturation,
   lightness,
+  colorArray,
   colorMode,
   colorHueMode
 });

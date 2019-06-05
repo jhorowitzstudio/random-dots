@@ -35,7 +35,10 @@ export default function brickLayer({
       };
       break;
     case 'select multiple':
-      scale = () => colorArray[Math.floor(Math.random() * colorArray.length)];
+      scale = () => {
+        if (colorArray === undefined || colorArray.length === 0) return null
+        return colorArray[Math.floor(Math.random() * colorArray.length)];
+      };
       break;
     default:
       break;

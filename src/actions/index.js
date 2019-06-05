@@ -8,6 +8,9 @@ export const SET_HSL = 'SET_HSL';
 export const SAVE_IMAGE = 'SAVE_IMAGE';
 export const SET_COLOR_MODE = 'SET_COLOR_MODE';
 export const SET_COLOR_HUE_MODE = 'SET_COLOR_HUE_MODE';
+export const ADD_TO_COLOR_ARRAY = 'ADD_TO_COLOR_ARRAY';
+export const REMOVE_FROM_COLOR_ARRAY = 'REMOVE_FROM_COLOR_ARRAY';
+export const EDIT_COLOR_IN_ARRAY = 'EDIT_COLOR_IN_ARRAY';
 
 export function toggleBrickDimensionsPopup() {
   return {
@@ -72,4 +75,26 @@ export function setColorHueMode(mode) {
 
 export function saveImage() {
   return { type: SAVE_IMAGE };
+}
+
+export function addToColorArray(color) {
+  return {
+    type: ADD_TO_COLOR_ARRAY,
+    payload: color
+  };
+}
+
+export function removeFromColorArray({ index }) {
+  return {
+    type: REMOVE_FROM_COLOR_ARRAY,
+    payload: { index }
+  };
+}
+
+export function editColorInArray({ index, color }) {
+  console.log(color);
+  return {
+    type: EDIT_COLOR_IN_ARRAY,
+    payload: { index, color }
+  };
 }

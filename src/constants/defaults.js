@@ -28,6 +28,7 @@ export const initialState = {
   firstColor: '#000000',
   secondColor: '#FFFFFF',
   mortarColor: '#FFFFFF',
+  colorArray: ['#FFFF00'],
   saturation: .8,
   lightness: .75,
   colorHueMode: 'rgb',
