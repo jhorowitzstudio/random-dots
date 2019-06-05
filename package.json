@@ -2,6 +2,7 @@
   "name": "bricks-generator",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jhorowitzstudio.github.io/brick-generator",
   "dependencies": {
     "chroma-js": "^2.0.3",
     "d3": "^5.9.2",
