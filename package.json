@@ -5,7 +5,6 @@
   "homepage": "https://jhorowitzstudio.github.io/brick-generator",
   "dependencies": {
     "chroma-js": "^2.0.3",
-    "d3": "^5.9.2",
     "rc-slider": "^8.6.11",
     "rc-tooltip": "^3.7.3",
     "react": "^16.8.6",
@@ -19,6 +18,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
