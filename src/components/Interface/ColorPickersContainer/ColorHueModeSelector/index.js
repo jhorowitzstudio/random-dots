@@ -2,6 +2,7 @@ import React from 'react';
 import { colorHueModes } from '../../../../constants/defaults';
 import { setColorHueMode } from '../../../../actions';
 import Select from '../../../Common/Select';
+import { StyledHueModeDiv } from './styles'
 
 export default class Component extends React.Component {
   handleSelectChange = event => {
@@ -13,14 +14,14 @@ export default class Component extends React.Component {
   render() {
     const { colorHueMode } = this.props;
     return (
-      <div>
+      <StyledHueModeDiv>
           Color Mode
         <Select
           handleChange={this.handleSelectChange}
           value={colorHueMode}
           options={colorHueModes}
         />
-      </div>
+      </StyledHueModeDiv>
     );
   }
 }

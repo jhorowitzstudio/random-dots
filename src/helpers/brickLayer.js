@@ -8,6 +8,7 @@ export default function brickLayer({
   brickMortar,
   firstColor,
   secondColor,
+  colorArray,
   saturation,
   lightness,
   colorHueMode,
@@ -20,17 +21,26 @@ export default function brickLayer({
   const yStartMaximum = canvasHeight - brickHeight;
   const xStartMaximum = canvasWidth;
   let scale;
-  if (colorHueMode === 'rgb') {
-    scale = chroma.scale([firstColor, secondColor]).mode(colorMode);
-  } else if (colorHueMode === 'random hex') {
-    scale = () => chroma.random()
-  } else if (colorHueMode === 'random hsl') {
-    scale = (random) => {
-      const hue = Math.floor(random * 360)
-      return chroma.hsl(hue, saturation, lightness)
-    }
+  switch (colorHueMode) {
+    case 'rgb':
+      scale = chroma.scale([firstColor, secondColor]).mode(colorMode);
+      break;
+    case 'random hex':
+      scale = () => chroma.random();
+      break;
+    case 'random hsl':
+      scale = random => {
+        const hue = Math.floor(random * 360);
+        return chroma.hsl(hue, saturation, lightness);
+      };
+      break;
+    case 'select multiple':
+      scale = () => colorArray[Math.floor(Math.random() * colorArray.length)];
+      break;
+    default:
+      break;
   }
-  
+
   let i = 0;
   for (let y = 0; y <= yStartMaximum; y += yIncrement) {
     for (let x = xStart; x <= xStartMaximum; x += xIncrement) {

@@ -1,9 +1,10 @@
 import React from 'react';
+import { StyledSelect } from './styles';
 
 export default props => {
   const { handleChange, value, options, disabled, custom = false } = props;
   return (
-    <select disabled={disabled} value={value} onChange={handleChange}>
+    <StyledSelect disabled={disabled} value={value} onChange={handleChange}>
       {Object.keys(options).map(name => (
         <option key={name} value={name}>
           {name}
@@ -14,6 +15,6 @@ export default props => {
           Custom...
         </option>
       )}
-    </select>
+    </StyledSelect>
   );
 };

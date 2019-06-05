@@ -42,7 +42,7 @@ export default class extends Component {
             Brick Dimensions: {brickWidth} x {brickHeight} height, with a{' '}
             {brickMortar} mortar
           </p>
-            <button type="submit" onClick={()=> this.setState({ _: Math.random() })}>Refresh</button>
+            <button style={{marginBottom:30}} type="submit" onClick={()=> this.setState({ _: Math.random() })}>Refresh</button>
         </div>
         <svg
           id="brickwall"

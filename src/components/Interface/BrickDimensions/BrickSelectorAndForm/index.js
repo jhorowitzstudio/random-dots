@@ -5,6 +5,7 @@ import {
   toggleBrickDimensionsPopup,
   setBrickDimensions
 } from '../../../../actions/index';
+import { StyledForm } from './styles';
 
 export default class extends Component {
   constructor(props) {
@@ -69,8 +70,9 @@ export default class extends Component {
           custom
         />
         {brickDimensionsPopup && (
-          <form onSubmit={this.submitForm}>
-            Brick Height
+          <StyledForm onSubmit={this.submitForm}>
+            <div>
+            <span>Brick Height</span>
             <input
               type="number"
               min="0"
@@ -79,7 +81,9 @@ export default class extends Component {
               value={formControls.brickHeight.value}
               onChange={this.handleChange}
             />
-            Brick Width
+            </div>
+            <div>
+            <span>Brick Width</span>
             <input
               type="number"
               min="0"
@@ -88,7 +92,9 @@ export default class extends Component {
               value={formControls.brickWidth.value}
               onChange={this.handleChange}
             />
-            Brick Mortar
+            </div>
+            <div>
+            <span>Brick Mortar</span>
             <input
               type="number"
               min="0"
@@ -97,8 +103,9 @@ export default class extends Component {
               value={formControls.brickMortar.value}
               onChange={this.handleChange}
             />
+            </div>
             <input type="submit" value="Submit" />
-          </form>
+          </StyledForm>
         )}
       </div>
     );

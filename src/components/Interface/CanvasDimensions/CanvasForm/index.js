@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { setCanvasDimensions, toggleTrim } from '../../../../actions/index';
+import { StyledForm } from './styles';
 
 export default class extends Component {
   constructor(props) {
@@ -55,41 +56,45 @@ export default class extends Component {
     return (
       <div>
         <h2>Canvas Dimensions</h2>
-        <form onSubmit={this.submitForm}>
-          Canvas Height
-          <input
-            type="number"
-            min="0"
-            step="1"
-            name="canvasHeight"
-            value={formControls.canvasHeight.value}
-            onChange={this.handleChange}
-          />
-          Trim Height
-          <input
-            type="checkbox"
-            name="trimHeight"
-            checked={trimHeight}
-            onChange={this.handleToggleTrim}
-          />
-          Canvas Width
-          <input
-            type="number"
-            min="0"
-            step="1"
-            name="canvasWidth"
-            value={formControls.canvasWidth.value}
-            onChange={this.handleChange}
-          />
-          Trim Width
-          <input
-            type="checkbox"
-            name="trimWidth"
-            checked={trimWidth}
-            onChange={this.handleToggleTrim}
-          />
+        <StyledForm onSubmit={this.submitForm}>
+          <div>
+            <span>Canvas Height</span>
+            <input
+              type="number"
+              min="0"
+              step="1"
+              name="canvasHeight"
+              value={formControls.canvasHeight.value}
+              onChange={this.handleChange}
+            />
+            <span>Trim Height</span>
+            <input
+              type="checkbox"
+              name="trimHeight"
+              checked={trimHeight}
+              onChange={this.handleToggleTrim}
+            />
+          </div>
+          <div>
+            <span>Canvas Width</span>
+            <input
+              type="number"
+              min="0"
+              step="1"  
+              name="canvasWidth"
+              value={formControls.canvasWidth.value}
+              onChange={this.handleChange}
+            />
+            <span>Trim Width</span>
+            <input
+              type="checkbox"
+              name="trimWidth"
+              checked={trimWidth}
+              onChange={this.handleToggleTrim}
+            />
+          </div>
           <input type="submit" value="Submit" />
-        </form>
+        </StyledForm>
       </div>
     );
   }

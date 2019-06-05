@@ -12,6 +12,7 @@ export const colorHueModes = {
   rgb: '',
   "random hex": '',
   "random hsl": '',
+  "select multiple": '',
 }
 
 
