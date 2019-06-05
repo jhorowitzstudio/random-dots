@@ -21,8 +21,8 @@ export default function reducer(state = initialState, action) {
     case SET_BRICK_DIMENSIONS:
       return {
         ...state,
-        brickHeight: action.payload.height,
-        brickWidth: action.payload.width,
+        brickHeight: action.payload.height || state.brickHeight,
+        brickWidth: action.payload.width || state.brickWidth,
         brickMortar: action.payload.mortar
       };
     case SET_CANVAS_DIMENSIONS:
