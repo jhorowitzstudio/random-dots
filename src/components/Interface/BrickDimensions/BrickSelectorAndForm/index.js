@@ -33,6 +33,7 @@ export default class extends Component {
   handleChange = event => {
     const { name, value } = event.target;
     this.setState(prevState => {
+      console.log(value)
       return {
         formControls: {
           ...prevState.formControls,

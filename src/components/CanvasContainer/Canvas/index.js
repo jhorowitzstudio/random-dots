@@ -46,6 +46,7 @@ export default class extends Component {
         <svg
           id="brickwall"
           width={canvasWidth}
+          fill='black'
           height={canvasHeight}
           preserveAspectRatio="xMinYMax meet"
         >
