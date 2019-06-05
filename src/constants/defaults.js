@@ -26,6 +26,7 @@ export const initialState = {
   canvasDimensionsPopup: false,
   firstColor: '#000000',
   secondColor: '#FFFFFF',
+  mortarColor: '#FFFFFF',
   saturation: .8,
   lightness: .75,
   colorHueMode: 'rgb',

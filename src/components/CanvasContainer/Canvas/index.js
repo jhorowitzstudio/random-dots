@@ -20,6 +20,7 @@ export default class extends Component {
       secondColor,
       colorMode,
       colorHueMode,
+      mortarColor,
       save
     } = this.props;
     let { canvasHeight, canvasWidth } = this.props;
@@ -46,7 +47,7 @@ export default class extends Component {
         <svg
           id="brickwall"
           width={canvasWidth}
-          fill='black'
+          style={{backgroundColor: mortarColor}}
           height={canvasHeight}
           preserveAspectRatio="xMinYMax meet"
         >

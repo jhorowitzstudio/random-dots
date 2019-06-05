@@ -11,8 +11,10 @@ export default class Component extends React.Component {
   render() {
     // eslint-disable-next-line react/destructuring-assignment
     const color = this.props[this.props.colorName];
+    const { header } = this.props;
     return (
       <PhotoshopPicker
+        header={header}
         color={color}
         onChangeComplete={this.handleOnChangeComplete}
       />

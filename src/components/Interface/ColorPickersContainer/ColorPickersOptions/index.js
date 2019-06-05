@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ColorPicker from './ColorPicker';
 import ColorSlide from './ColorSlide';
+// import styles from './styles'
 
 const ColorPickersContainer = props => {
   const { colorHueMode, saturation, lightness } = props;
@@ -10,8 +11,9 @@ const ColorPickersContainer = props => {
       <h2>Colors</h2>
       {colorHueMode === 'rgb' && (
         <div style={{ display: 'flex' }}>
-          <ColorPicker colorName="firstColor" {...props} />
-          <ColorPicker colorName="secondColor" {...props} />
+          <ColorPicker colorName="firstColor" header='First Color' {...props} />
+          <ColorPicker colorName="secondColor" header='Second Color' {...props} />
+          <ColorPicker colorName="mortarColor" header='Mortar Color' {...props} />
         </div>
       )}
       {colorHueMode === 'random hex' && (
@@ -30,11 +32,13 @@ const ColorPickersContainer = props => {
 const mapStateToProps = ({
   firstColor,
   secondColor,
+  mortarColor,
   colorMode,
   colorHueMode
 }) => ({
   firstColor,
   secondColor,
+  mortarColor,
   colorMode,
   colorHueMode
 });
