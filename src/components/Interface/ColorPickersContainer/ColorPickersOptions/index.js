@@ -5,7 +5,11 @@ import { connect } from 'react-redux';
 import ColorPicker from './ColorPicker';
 import ColorSlide from './ColorSlide';
 import CustomColorPicker from './CustomColorPicker';
-import { removeFromColorArray, addToColorArray } from '../../../../actions';
+import {
+  removeFromColorArray,
+  addToColorArray,
+  toggleTransparentBackground
+} from '../../../../actions';
 // import styles from './styles'
 
 class ColorPickersContainer extends React.Component {
@@ -19,11 +23,38 @@ class ColorPickersContainer extends React.Component {
     dispatch(addToColorArray(random()));
   };
 
+  handleCheck = event => {
+    const { dispatch } = this.props;
+    dispatch(toggleTransparentBackground({ checked: event.target.checked }));
+  };
+
   render() {
-    const { colorHueMode, saturation, lightness, colorArray } = this.props;
+    const {
+      colorHueMode,
+      saturation,
+      lightness,
+      colorArray,
+      transparentBackground
+    } = this.props;
     return (
       <div>
         <h2>Colors</h2>
+        <h2>Background Color</h2>
+        <p>
+          <span>Transparent Background </span>
+          <input
+            type="checkbox"
+            onChange={this.handleCheck}
+            checked={transparentBackground}
+          />
+        </p>
+        {!transparentBackground && (
+          <ColorPicker
+            colorName="backgroundColor"
+            header="Background Color"
+            {...this.props}
+          />
+        )}
         {colorHueMode === 'two-point scale' && (
           <div style={{ display: 'flex' }}>
             <ColorPicker

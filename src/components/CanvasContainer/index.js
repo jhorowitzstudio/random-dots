@@ -37,10 +37,12 @@ const mapStateToProps = ({
   numberOfDots,
   dotRadiusMin,
   firstColor,
+  secondColor,
+  backgroundColor,
+  transparentBackground,
   saturation,
   colorArray,
   lightness,
-  secondColor,
   colorHueMode,
   colorMode
 }) => ({
@@ -51,6 +53,8 @@ const mapStateToProps = ({
   dotRadiusMin,
   firstColor,
   secondColor,
+  backgroundColor,
+  transparentBackground,
   colorArray,
   saturation,
   lightness,

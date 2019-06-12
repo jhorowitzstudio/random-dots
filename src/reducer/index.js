@@ -1,6 +1,6 @@
 import { initialState } from '../constants/defaults';
 import {
-  TOGGLE_CANVAS_POPUP,
+  TOGGLE_TRANSPARENT_BACKGROUND,
   SET_DOT_DIMENSIONS,
   SET_NUMBER_OF_DOTS,
   SET_CANVAS_DIMENSIONS,
@@ -16,8 +16,11 @@ import {
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case TOGGLE_CANVAS_POPUP:
-      return { ...state, canvasDimensionsPopup: !state.canvasDimensionsPopup };
+    case TOGGLE_TRANSPARENT_BACKGROUND:
+      return {
+        ...state,
+        transparentBackground: !state.transparentBackground
+      };
     case SET_DOT_DIMENSIONS:
       return {
         ...state,
@@ -28,7 +31,7 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         numberOfDots: action.payload.numberOfDots || state.numberOfDots
-      }
+      };
     case SET_CANVAS_DIMENSIONS:
       return {
         ...state,

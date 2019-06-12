@@ -1,4 +1,4 @@
-export const TOGGLE_CANVAS_POPUP = 'TOGGLE_CANVAS_POPUP';
+export const TOGGLE_TRANSPARENT_BACKGROUND = 'TOGGLE_TRANSPARENT_BACKGROUND';
 export const SET_DOT_DIMENSIONS = 'SET_DOT_DIMENSIONS';
 export const SET_NUMBER_OF_DOTS = 'SET_NUMBER_OF_DOTS';
 export const SET_CANVAS_DIMENSIONS = 'SET_CANVAS_DIMENSIONS';
@@ -11,9 +11,10 @@ export const ADD_TO_COLOR_ARRAY = 'ADD_TO_COLOR_ARRAY';
 export const REMOVE_FROM_COLOR_ARRAY = 'REMOVE_FROM_COLOR_ARRAY';
 export const EDIT_COLOR_IN_ARRAY = 'EDIT_COLOR_IN_ARRAY';
 
-export function toggleCanvasDimensionsPopup() {
+export function toggleTransparentBackground({checked}) {
   return {
-    type: TOGGLE_CANVAS_POPUP
+    type: TOGGLE_TRANSPARENT_BACKGROUND,
+    payload: {checked}
   };
 }
 

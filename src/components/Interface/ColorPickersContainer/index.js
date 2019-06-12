@@ -20,7 +20,8 @@ const mapStateToProps = ({
   lightness,
   colorArray,
   colorMode,
-  colorHueMode
+  colorHueMode,
+  transparentBackground,
 }) => ({
   firstColor,
   secondColor,
@@ -28,7 +29,8 @@ const mapStateToProps = ({
   lightness,
   colorArray,
   colorMode,
-  colorHueMode
+  colorHueMode,
+  transparentBackground,
 });
 
 export default connect(mapStateToProps)(ColorPickersContainer);

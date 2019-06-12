@@ -17,6 +17,8 @@ export default class extends Component {
       canvasHeight,
       canvasWidth,
       colorHueMode,
+      backgroundColor,
+      transparentBackground,
       save
     } = this.props;
     return (
@@ -45,6 +47,9 @@ export default class extends Component {
           id="dotwall"
           width={canvasWidth}
           height={canvasHeight}
+          style={{
+            backgroundColor: transparentBackground ? false : backgroundColor
+          }}
           preserveAspectRatio="xMinYMax meet"
         >
           {dotLayer({
