@@ -1,5 +1,12 @@
 # Brick Generator
 
+`npm run start`
+
+`npm run deploy`
+
+
+
+
 ## initial instructions notes
 field of bricks
 same size as actual bricks

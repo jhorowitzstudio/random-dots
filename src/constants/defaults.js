@@ -9,12 +9,11 @@ export const colorModes = {
 };
 
 export const colorHueModes = {
-  rgb: '',
-  "random hex": '',
-  "random hsl": '',
-  "select multiple": '',
-}
-
+  'two-point scale': '',
+  'totally-random RGB': '',
+  'controlled-random HSL': '',
+  'choose color from multiple': ''
+};
 
 export const initialState = {
   brickHeight: brickDimensions.Standard.height,
@@ -28,11 +27,11 @@ export const initialState = {
   firstColor: '#000000',
   secondColor: '#FFFFFF',
   mortarColor: '#FFFFFF',
-  colorArray: ['#FFFF00'],
-  saturation: .8,
-  lightness: .75,
-  colorHueMode: 'rgb',
+  colorArray: [],
+  saturation: 0.8,
+  lightness: 0.75,
+  colorHueMode: 'two-point scale',
   colorMode: 'rgb',
   trimHeight: true,
-  trimWidth: true,
+  trimWidth: true
 };

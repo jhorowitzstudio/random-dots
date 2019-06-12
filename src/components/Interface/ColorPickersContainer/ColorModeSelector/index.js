@@ -16,7 +16,7 @@ export default class Component extends React.Component {
       <div>
         Color Scale Method
         <Select
-          disabled={colorHueMode !== 'rgb'}
+          disabled={colorHueMode !== 'two-point scale'}
           handleChange={this.handleSelectChange}
           value={colorMode}
           options={colorModes}

@@ -92,7 +92,6 @@ export function removeFromColorArray({ index }) {
 }
 
 export function editColorInArray({ index, color }) {
-  console.log(color);
   return {
     type: EDIT_COLOR_IN_ARRAY,
     payload: { index, color }

@@ -49,7 +49,6 @@ export default function reducer(state = initialState, action) {
     case ADD_TO_COLOR_ARRAY:
       return { ...state, colorArray: [...state.colorArray, action.payload] };
     case REMOVE_FROM_COLOR_ARRAY:
-      console.log(action.payload.index)
       return {
         ...state,
         message: action.payload,

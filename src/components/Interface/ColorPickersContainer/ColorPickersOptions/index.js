@@ -30,7 +30,7 @@ class ColorPickersContainer extends React.Component {
           {...this.props}
         />
         <h2>Colors</h2>
-        {colorHueMode === 'rgb' && (
+        {colorHueMode === 'two-point scale' && (
           <div style={{ display: 'flex' }}>
             <ColorPicker
               colorName="firstColor"
@@ -44,10 +44,10 @@ class ColorPickersContainer extends React.Component {
             />
           </div>
         )}
-        {colorHueMode === 'random hex' && (
+        {colorHueMode === 'totally-random RGB' && (
           <p>No color values to select. Random rgb values generated.</p>
         )}
-        {colorHueMode === 'random hsl' && (
+        {colorHueMode === 'controlled-random HSL' && (
           <div style={{ display: 'flex' }}>
             <ColorSlide
               value={saturation}
@@ -61,44 +61,43 @@ class ColorPickersContainer extends React.Component {
             />
           </div>
         )}
-        {colorHueMode === 'select multiple' && (
-          <div style={{maxWidth:800}}>
+        {colorHueMode === 'choose color from multiple' && (
+          <div style={{ maxWidth: 800 }}>
             <span>Click on color box to edit, click again to save.</span>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(52px, 1fr))',
-              gridColumnGap: 0,
-              gridRowGap: 15
-            }}
-          >
-            <button
-              style={{ marginRight: 5, borderRadius: 5 }}
-              type="submit"
-              onClick={this.handleAdd}
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(52px, 1fr))',
+                gridColumnGap: 0,
+                gridRowGap: 15
+              }}
             >
-              Add Color
-            </button>
-            {colorArray.map((color, index) => {
-              console.log(index);
-              return (
-                <div key={index + color}>
-                  <CustomColorPicker
-                    index={index}
-                    key={index + color}
-                    color={color}
-                    {...this.props}
-                  />
-                  <button
-                    type="submit"
-                    onClick={() => this.removeHandler({ index })}
-                  >
-                    delete
-                  </button>
-                </div>
-              );
-            })}
-          </div>
+              <button
+                style={{ marginRight: 5, borderRadius: 5 }}
+                type="submit"
+                onClick={this.handleAdd}
+              >
+                Add Color
+              </button>
+              {colorArray.map((color, index) => {
+                return (
+                  <div key={index + color}>
+                    <CustomColorPicker
+                      index={index}
+                      key={index + color}
+                      color={color}
+                      {...this.props}
+                    />
+                    <button
+                      type="submit"
+                      onClick={() => this.removeHandler({ index })}
+                    >
+                      delete
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         )}
       </div>

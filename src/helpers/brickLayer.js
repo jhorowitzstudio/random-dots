@@ -22,19 +22,19 @@ export default function brickLayer({
   const xStartMaximum = canvasWidth;
   let scale;
   switch (colorHueMode) {
-    case 'rgb':
+    case 'two-point scale':
       scale = chroma.scale([firstColor, secondColor]).mode(colorMode);
       break;
-    case 'random hex':
+    case 'totally-random RGB':
       scale = () => chroma.random();
       break;
-    case 'random hsl':
+    case 'controlled-random HSL':
       scale = random => {
         const hue = Math.floor(random * 360);
         return chroma.hsl(hue, saturation, lightness);
       };
       break;
-    case 'select multiple':
+    case 'choose color from multiple':
       scale = () => {
         if (colorArray === undefined || colorArray.length === 0) return null
         return colorArray[Math.floor(Math.random() * colorArray.length)];
