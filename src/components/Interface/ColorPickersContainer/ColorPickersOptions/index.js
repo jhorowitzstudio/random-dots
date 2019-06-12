@@ -23,12 +23,6 @@ class ColorPickersContainer extends React.Component {
     const { colorHueMode, saturation, lightness, colorArray } = this.props;
     return (
       <div>
-        <h2>Mortar Color</h2>
-        <ColorPicker
-          colorName="mortarColor"
-          header="Mortar Color"
-          {...this.props}
-        />
         <h2>Colors</h2>
         {colorHueMode === 'two-point scale' && (
           <div style={{ display: 'flex' }}>
@@ -108,13 +102,11 @@ class ColorPickersContainer extends React.Component {
 const mapStateToProps = ({
   firstColor,
   secondColor,
-  mortarColor,
   colorMode,
   colorHueMode
 }) => ({
   firstColor,
   secondColor,
-  mortarColor,
   colorMode,
   colorHueMode
 });

@@ -1,8 +1,7 @@
-export const TOGGLE_DOT_POPUP = 'TOGGLE_DOT_POPUP';
 export const TOGGLE_CANVAS_POPUP = 'TOGGLE_CANVAS_POPUP';
 export const SET_DOT_DIMENSIONS = 'SET_DOT_DIMENSIONS';
+export const SET_NUMBER_OF_DOTS = 'SET_NUMBER_OF_DOTS';
 export const SET_CANVAS_DIMENSIONS = 'SET_CANVAS_DIMENSIONS';
-export const TOGGLE_TRIM = 'TOGGLE_TRIM';
 export const SET_COLOR = 'SET_COLOR';
 export const SET_HSL = 'SET_HSL';
 export const SAVE_IMAGE = 'SAVE_IMAGE';
@@ -12,22 +11,23 @@ export const ADD_TO_COLOR_ARRAY = 'ADD_TO_COLOR_ARRAY';
 export const REMOVE_FROM_COLOR_ARRAY = 'REMOVE_FROM_COLOR_ARRAY';
 export const EDIT_COLOR_IN_ARRAY = 'EDIT_COLOR_IN_ARRAY';
 
-export function toggleDotDimensionsPopup() {
-  return {
-    type: TOGGLE_DOT_POPUP
-  };
-}
-
 export function toggleCanvasDimensionsPopup() {
   return {
     type: TOGGLE_CANVAS_POPUP
   };
 }
 
-export function setDotDimensions(dimensions) {
+export function setDotDimensions({ dotRadiusMin, dotRadiusMax }) {
   return {
     type: SET_DOT_DIMENSIONS,
-    payload: dimensions
+    payload: { dotRadiusMin, dotRadiusMax }
+  };
+}
+
+export function setNumberOfDots({ numberOfDots }) {
+  return {
+    type: SET_NUMBER_OF_DOTS,
+    payload: { numberOfDots }
   };
 }
 
@@ -35,13 +35,6 @@ export function setCanvasDimensions(dimensions) {
   return {
     type: SET_CANVAS_DIMENSIONS,
     payload: dimensions
-  };
-}
-
-export function toggleTrim(name) {
-  return {
-    type: TOGGLE_TRIM,
-    payload: name
   };
 }
 

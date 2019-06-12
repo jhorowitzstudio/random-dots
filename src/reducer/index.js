@@ -1,10 +1,9 @@
 import { initialState } from '../constants/defaults';
 import {
-  TOGGLE_DOT_POPUP,
   TOGGLE_CANVAS_POPUP,
   SET_DOT_DIMENSIONS,
+  SET_NUMBER_OF_DOTS,
   SET_CANVAS_DIMENSIONS,
-  TOGGLE_TRIM,
   SET_COLOR,
   SET_COLOR_MODE,
   SAVE_IMAGE,
@@ -17,25 +16,25 @@ import {
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case TOGGLE_DOT_POPUP:
-      return { ...state, dotDimensionsPopup: !state.dotDimensionsPopup };
     case TOGGLE_CANVAS_POPUP:
       return { ...state, canvasDimensionsPopup: !state.canvasDimensionsPopup };
     case SET_DOT_DIMENSIONS:
       return {
         ...state,
-        dotHeight: action.payload.height || state.dotHeight,
-        dotWidth: action.payload.width || state.dotWidth,
-        dotMortar: action.payload.mortar
+        dotRadiusMin: action.payload.dotRadiusMin || state.dotRadiusMin,
+        dotRadiusMax: action.payload.dotRadiusMax || state.dotRadiusMax
       };
+    case SET_NUMBER_OF_DOTS:
+      return {
+        ...state,
+        numberOfDots: action.payload.numberOfDots || state.numberOfDots
+      }
     case SET_CANVAS_DIMENSIONS:
       return {
         ...state,
         canvasHeight: action.payload.height || state.canvasHeight,
         canvasWidth: action.payload.width || state.canvasWidth
       };
-    case TOGGLE_TRIM:
-      return { ...state, [action.payload]: !state[action.payload] };
     case SET_COLOR:
       return { ...state, [action.payload.name]: action.payload.color };
     case SET_HSL:

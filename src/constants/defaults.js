@@ -1,4 +1,3 @@
-import dotDimensions from './dotDimensions';
 
 export const colorModes = {
   rgb: '',
@@ -16,9 +15,9 @@ export const colorHueModes = {
 };
 
 export const initialState = {
-  dotHeight: dotDimensions.Standard.height,
-  dotWidth: dotDimensions.Standard.width,
-  dotMortar: dotDimensions.Standard.mortar,
+  dotRadiusMin: 1,
+  dotRadiusMax: 10,
+  numberOfDots: 500,
   canvasHeight: 800,
   canvasWidth: 1000,
   lineThickness: 1,
@@ -26,12 +25,9 @@ export const initialState = {
   canvasDimensionsPopup: false,
   firstColor: '#000000',
   secondColor: '#FFFFFF',
-  mortarColor: '#FFFFFF',
   colorArray: [],
   saturation: 0.8,
   lightness: 0.75,
   colorHueMode: 'two-point scale',
   colorMode: 'rgb',
-  trimHeight: true,
-  trimWidth: true
 };

@@ -15,9 +15,10 @@ function save() {
   link.href = url;
   link.download = 'dotwall.svg';
   link.innerHTML = 'Click to download';
-  link.onclick = () => {
+  function fn() {
     document.getElementById('download-div').innerHTML = '';
-  };
+  }
+  document.body.addEventListener('click', fn, true);
   document.getElementById('download-div').innerHTML = '';
   document.getElementById('download-div').appendChild(link);
 }
@@ -32,13 +33,10 @@ const ColorPickersContainer = props => (
 const mapStateToProps = ({
   canvasHeight,
   canvasWidth,
-  dotHeight,
-  dotWidth,
-  dotMortar,
-  trimHeight,
-  trimWidth,
+  dotRadiusMax,
+  numberOfDots,
+  dotRadiusMin,
   firstColor,
-  mortarColor,
   saturation,
   colorArray,
   lightness,
@@ -48,15 +46,12 @@ const mapStateToProps = ({
 }) => ({
   canvasHeight,
   canvasWidth,
-  dotHeight,
-  dotWidth,
-  dotMortar,
-  trimHeight,
-  trimWidth,
+  numberOfDots,
+  dotRadiusMax,
+  dotRadiusMin,
   firstColor,
   secondColor,
   colorArray,
-  mortarColor,
   saturation,
   lightness,
   colorHueMode,

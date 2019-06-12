@@ -3,9 +3,7 @@ import chroma from 'chroma-js';
 export default function dotLayer({
   canvasHeight,
   canvasWidth,
-  dotHeight,
-  dotWidth,
-  dotMortar,
+  numberOfDots,
   firstColor,
   secondColor,
   colorArray,
@@ -15,11 +13,6 @@ export default function dotLayer({
   colorMode
 }) {
   const coordinates = [];
-  const xStart = -dotWidth / 2;
-  const yIncrement = Math.round(dotHeight + dotMortar);
-  const xIncrement = Math.round(dotWidth + dotMortar);
-  const yStartMaximum = canvasHeight - dotHeight;
-  const xStartMaximum = canvasWidth;
   let scale;
   switch (colorHueMode) {
     case 'two-point scale':
@@ -36,25 +29,19 @@ export default function dotLayer({
       break;
     case 'choose color from multiple':
       scale = () => {
-        if (colorArray === undefined || colorArray.length === 0) return null
+        if (colorArray === undefined || colorArray.length === 0) return null;
         return colorArray[Math.floor(Math.random() * colorArray.length)];
       };
       break;
     default:
       break;
   }
-
-  let i = 0;
-  for (let y = 0; y <= yStartMaximum; y += yIncrement) {
-    for (let x = xStart; x <= xStartMaximum; x += xIncrement) {
-      const fill = scale(Math.random());
-      if (i % 2 !== 0) {
-        coordinates.push({ x: x + dotWidth / 2, y, fill });
-      } else {
-        coordinates.push({ x, y, fill });
-      }
-    }
-    i += 1;
+  for (let i = 0; i < numberOfDots; i += 1) {
+    const x = Math.floor(Math.random() * canvasWidth);
+    const y = Math.floor(Math.random() * canvasHeight);
+    const fill = scale(Math.random());
+    const key = i;
+    coordinates.push({ x, y, key, fill });
   }
   return coordinates;
 }

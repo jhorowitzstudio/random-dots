@@ -1,24 +1,18 @@
 import React, { Component } from 'react';
-import { setCanvasDimensions } from '../../../../actions/index';
+import { setDotDimensions } from '../../../../actions/index';
 import { StyledForm } from './styles';
 
 export default class extends Component {
   constructor(props) {
     super(props);
-    const { canvasHeight, canvasWidth } = this.props;
+    const { dotRadiusMin, dotRadiusMax } = this.props;
     this.state = {
       formControls: {
-        canvasHeight: { value: canvasHeight },
-        canvasWidth: { value: canvasWidth }
+        dotRadiusMin: { value: dotRadiusMin },
+        dotRadiusMax: { value: dotRadiusMax }
       }
     };
   }
-
-  handleSelectChange = event => {
-    const { dispatch } = this.props;
-    const { value } = event.target;
-    dispatch(setCanvasDimensions(value));
-  };
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -35,41 +29,45 @@ export default class extends Component {
     });
   };
 
-
   submitForm = event => {
     event.preventDefault();
     const { dispatch } = this.props;
     const { formControls } = this.state;
-    const height = parseInt(formControls.canvasHeight.value, 10);
-    const width = parseInt(formControls.canvasWidth.value, 10);
-    dispatch(setCanvasDimensions({ height, width }));
+    const dotRadiusMin = parseInt(formControls.dotRadiusMin.value, 10);
+    const dotRadiusMax = parseInt(formControls.dotRadiusMax.value, 10);
+    if (dotRadiusMin > dotRadiusMax)
+    // eslint-disable-next-line no-alert
+      window.alert(
+        'Dot Radius Min must be EQUAL TO or LESS THAN Dot Radius Max'
+      );
+    dispatch(setDotDimensions({ dotRadiusMax, dotRadiusMin }));
   };
 
   render() {
     const { formControls } = this.state;
     return (
       <div>
-        <h2>Canvas Dimensions</h2>
+        <h2>Dot Radius Range</h2>
         <StyledForm onSubmit={this.submitForm}>
           <div>
-            <span>Canvas Height</span>
+            <span>Dot Radius Min</span>
             <input
               type="number"
               min="0"
               step="1"
-              name="canvasHeight"
-              value={formControls.canvasHeight.value}
+              name="dotRadiusMin"
+              value={formControls.dotRadiusMin.value}
               onChange={this.handleChange}
             />
           </div>
           <div>
-            <span>Canvas Width</span>
+            <span>Dot Radius Max</span>
             <input
               type="number"
               min="0"
-              step="1"  
-              name="canvasWidth"
-              value={formControls.canvasWidth.value}
+              step="1"
+              name="dotRadiusMax"
+              value={formControls.dotRadiusMax.value}
               onChange={this.handleChange}
             />
           </div>
