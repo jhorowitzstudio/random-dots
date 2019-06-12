@@ -15,9 +15,10 @@ function save() {
   link.href = url;
   link.download = 'brickwall.svg';
   link.innerHTML = 'Click to download';
-  link.onclick = () => {
+  function fn() {
     document.getElementById('download-div').innerHTML = '';
-  };
+  }
+  document.body.addEventListener('click', fn, true);
   document.getElementById('download-div').innerHTML = '';
   document.getElementById('download-div').appendChild(link);
 }
