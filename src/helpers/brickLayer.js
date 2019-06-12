@@ -1,11 +1,11 @@
 import chroma from 'chroma-js';
 
-export default function brickLayer({
+export default function dotLayer({
   canvasHeight,
   canvasWidth,
-  brickHeight,
-  brickWidth,
-  brickMortar,
+  dotHeight,
+  dotWidth,
+  dotMortar,
   firstColor,
   secondColor,
   colorArray,
@@ -15,10 +15,10 @@ export default function brickLayer({
   colorMode
 }) {
   const coordinates = [];
-  const xStart = -brickWidth / 2;
-  const yIncrement = Math.round(brickHeight + brickMortar);
-  const xIncrement = Math.round(brickWidth + brickMortar);
-  const yStartMaximum = canvasHeight - brickHeight;
+  const xStart = -dotWidth / 2;
+  const yIncrement = Math.round(dotHeight + dotMortar);
+  const xIncrement = Math.round(dotWidth + dotMortar);
+  const yStartMaximum = canvasHeight - dotHeight;
   const xStartMaximum = canvasWidth;
   let scale;
   switch (colorHueMode) {
@@ -49,7 +49,7 @@ export default function brickLayer({
     for (let x = xStart; x <= xStartMaximum; x += xIncrement) {
       const fill = scale(Math.random());
       if (i % 2 !== 0) {
-        coordinates.push({ x: x + brickWidth / 2, y, fill });
+        coordinates.push({ x: x + dotWidth / 2, y, fill });
       } else {
         coordinates.push({ x, y, fill });
       }

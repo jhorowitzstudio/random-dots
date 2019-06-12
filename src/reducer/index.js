@@ -1,8 +1,8 @@
 import { initialState } from '../constants/defaults';
 import {
-  TOGGLE_BRICK_POPUP,
+  TOGGLE_DOT_POPUP,
   TOGGLE_CANVAS_POPUP,
-  SET_BRICK_DIMENSIONS,
+  SET_DOT_DIMENSIONS,
   SET_CANVAS_DIMENSIONS,
   TOGGLE_TRIM,
   SET_COLOR,
@@ -17,16 +17,16 @@ import {
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case TOGGLE_BRICK_POPUP:
-      return { ...state, brickDimensionsPopup: !state.brickDimensionsPopup };
+    case TOGGLE_DOT_POPUP:
+      return { ...state, dotDimensionsPopup: !state.dotDimensionsPopup };
     case TOGGLE_CANVAS_POPUP:
       return { ...state, canvasDimensionsPopup: !state.canvasDimensionsPopup };
-    case SET_BRICK_DIMENSIONS:
+    case SET_DOT_DIMENSIONS:
       return {
         ...state,
-        brickHeight: action.payload.height || state.brickHeight,
-        brickWidth: action.payload.width || state.brickWidth,
-        brickMortar: action.payload.mortar
+        dotHeight: action.payload.height || state.dotHeight,
+        dotWidth: action.payload.width || state.dotWidth,
+        dotMortar: action.payload.mortar
       };
     case SET_CANVAS_DIMENSIONS:
       return {

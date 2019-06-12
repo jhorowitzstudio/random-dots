@@ -1,19 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import BrickSelectorAndForm from './BrickSelectorAndForm';
+import DotSelectorAndForm from './DotSelectorAndForm';
 
-const BrickDimensions = props => <BrickSelectorAndForm {...props} />;
+const DotDimensions = props => <DotSelectorAndForm {...props} />;
 
 const mapStateToProps = ({
-  brickHeight,
-  brickWidth,
-  brickMortar,
-  brickDimensionsPopup
+  dotHeight,
+  dotWidth,
+  dotMortar,
+  dotDimensionsPopup
 }) => ({
-  brickHeight,
-  brickWidth,
-  brickMortar,
-  brickDimensionsPopup
+  dotHeight,
+  dotWidth,
+  dotMortar,
+  dotDimensionsPopup
 });
 
-export default connect(mapStateToProps)(BrickDimensions);
+export default connect(mapStateToProps)(DotDimensions);

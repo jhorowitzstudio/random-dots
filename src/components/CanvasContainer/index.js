@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Canvas from './Canvas';
 
 function save() {
-  const svg = document.getElementById('brickwall');
+  const svg = document.getElementById('dotwall');
   // eslint-disable-next-line no-undef
   const serializer = new XMLSerializer() || xmlserializer;
   const svgBlob = new Blob([serializer.serializeToString(svg)], {
@@ -13,7 +13,7 @@ function save() {
   const url = URL.createObjectURL(svgBlob);
   const link = document.createElement('a');
   link.href = url;
-  link.download = 'brickwall.svg';
+  link.download = 'dotwall.svg';
   link.innerHTML = 'Click to download';
   link.onclick = () => {
     document.getElementById('download-div').innerHTML = '';
@@ -32,9 +32,9 @@ const ColorPickersContainer = props => (
 const mapStateToProps = ({
   canvasHeight,
   canvasWidth,
-  brickHeight,
-  brickWidth,
-  brickMortar,
+  dotHeight,
+  dotWidth,
+  dotMortar,
   trimHeight,
   trimWidth,
   firstColor,
@@ -48,9 +48,9 @@ const mapStateToProps = ({
 }) => ({
   canvasHeight,
   canvasWidth,
-  brickHeight,
-  brickWidth,
-  brickMortar,
+  dotHeight,
+  dotWidth,
+  dotMortar,
   trimHeight,
   trimWidth,
   firstColor,

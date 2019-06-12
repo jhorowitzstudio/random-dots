@@ -1,4 +1,4 @@
-import brickDimensions from './brickDimensions';
+import dotDimensions from './dotDimensions';
 
 export const colorModes = {
   rgb: '',
@@ -16,13 +16,13 @@ export const colorHueModes = {
 };
 
 export const initialState = {
-  brickHeight: brickDimensions.Standard.height,
-  brickWidth: brickDimensions.Standard.width,
-  brickMortar: brickDimensions.Standard.mortar,
+  dotHeight: dotDimensions.Standard.height,
+  dotWidth: dotDimensions.Standard.width,
+  dotMortar: dotDimensions.Standard.mortar,
   canvasHeight: 800,
   canvasWidth: 1000,
   lineThickness: 1,
-  brickDimensionsPopup: false,
+  dotDimensionsPopup: false,
   canvasDimensionsPopup: false,
   firstColor: '#000000',
   secondColor: '#FFFFFF',

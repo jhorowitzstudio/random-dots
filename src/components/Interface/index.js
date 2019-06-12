@@ -1,11 +1,11 @@
 import React from 'react';
-import BrickDimensions from './BrickDimensions';
+import DotDimensions from './DotDimensions';
 import CanvasDimensions from './CanvasDimensions';
 import ColorPickersContainer from './ColorPickersContainer';
 
 export default () => (
   <div>
-    <BrickDimensions />
+    <DotDimensions />
     <CanvasDimensions />
     <ColorPickersContainer />
   </div>

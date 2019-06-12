@@ -1,33 +1,33 @@
 import React, { Component } from 'react';
 import Select from '../../../Common/Select';
-import brickDimensions from '../../../../constants/brickDimensions';
+import dotDimensions from '../../../../constants/dotDimensions';
 import {
-  toggleBrickDimensionsPopup,
-  setBrickDimensions
+  toggleDotDimensionsPopup,
+  setDotDimensions
 } from '../../../../actions/index';
 import { StyledForm } from './styles';
 
 export default class extends Component {
   constructor(props) {
     super(props);
-    const { brickHeight, brickWidth, brickMortar } = this.props;
+    const { dotHeight, dotWidth, dotMortar } = this.props;
     this.state = {
       formControls: {
-        brickHeight: { value: brickHeight },
-        brickWidth: { value: brickWidth },
-        brickMortar: { value: brickMortar }
+        dotHeight: { value: dotHeight },
+        dotWidth: { value: dotWidth },
+        dotMortar: { value: dotMortar }
       }
     };
   }
 
   handleSelectChange = event => {
-    const { brickDimensionsPopup, dispatch } = this.props;
+    const { dotDimensionsPopup, dispatch } = this.props;
     const { value } = event.target;
     if (value === 'Custom...') {
-      dispatch(toggleBrickDimensionsPopup());
+      dispatch(toggleDotDimensionsPopup());
     } else {
-      if (brickDimensionsPopup === true) dispatch(toggleBrickDimensionsPopup());
-      dispatch(setBrickDimensions(brickDimensions[value]));
+      if (dotDimensionsPopup === true) dispatch(toggleDotDimensionsPopup());
+      dispatch(setDotDimensions(dotDimensions[value]));
     }
   };
 
@@ -50,56 +50,56 @@ export default class extends Component {
     event.preventDefault();
     const { dispatch } = this.props;
     const { formControls } = this.state;
-    const height = parseInt(formControls.brickHeight.value, 10);
-    const width = parseInt(formControls.brickWidth.value, 10);
-    const mortar = parseInt(formControls.brickMortar.value, 10);
-    dispatch(setBrickDimensions({ height, width, mortar }));
+    const height = parseInt(formControls.dotHeight.value, 10);
+    const width = parseInt(formControls.dotWidth.value, 10);
+    const mortar = parseInt(formControls.dotMortar.value, 10);
+    dispatch(setDotDimensions({ height, width, mortar }));
   };
 
   render() {
-    const { value, brickDimensionsPopup } = this.props;
+    const { value, dotDimensionsPopup } = this.props;
     const { formControls } = this.state;
     return (
       <div>
-        <h2>Brick Dimensions</h2>
+        <h2>Dot Dimensions</h2>
         <Select
           handleChange={this.handleSelectChange}
           value={value}
-          options={brickDimensions}
+          options={dotDimensions}
           custom
         />
-        {brickDimensionsPopup && (
+        {dotDimensionsPopup && (
           <StyledForm onSubmit={this.submitForm}>
             <div>
-            <span>Brick Height</span>
+            <span>Dot Height</span>
             <input
               type="number"
               min="0"
               step="1"
-              name="brickHeight"
-              value={formControls.brickHeight.value}
+              name="dotHeight"
+              value={formControls.dotHeight.value}
               onChange={this.handleChange}
             />
             </div>
             <div>
-            <span>Brick Width</span>
+            <span>Dot Width</span>
             <input
               type="number"
               min="0"
               step="1"
-              name="brickWidth"
-              value={formControls.brickWidth.value}
+              name="dotWidth"
+              value={formControls.dotWidth.value}
               onChange={this.handleChange}
             />
             </div>
             <div>
-            <span>Brick Mortar</span>
+            <span>Dot Mortar</span>
             <input
               type="number"
               min="0"
               step="1"
-              name="brickMortar"
-              value={formControls.brickMortar.value}
+              name="dotMortar"
+              value={formControls.dotMortar.value}
               onChange={this.handleChange}
             />
             </div>
