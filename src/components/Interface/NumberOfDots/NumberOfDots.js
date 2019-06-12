@@ -39,6 +39,7 @@ export default class extends Component {
               onChange={this.handleChange}
             />
           </div>
+            <div style={{fontSize:'.8rem'}}>Recommended 100000 max. If more are needed, assemble as layers in adobe illustrator</div>
           <input type="submit" value="Submit" />
         </StyledForm>
       </div>

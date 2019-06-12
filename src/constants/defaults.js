@@ -15,11 +15,11 @@ export const colorHueModes = {
 };
 
 export const initialState = {
-  dotRadiusMin: 1,
-  dotRadiusMax: 10,
-  numberOfDots: 500,
-  canvasHeight: 800,
-  canvasWidth: 1000,
+  dotRadiusMin: 3,
+  dotRadiusMax: 8,
+  numberOfDots: 1000,
+  canvasHeight: 1000,
+  canvasWidth: 800,
   lineThickness: 1,
   dotDimensionsPopup: false,
   canvasDimensionsPopup: false,
@@ -28,6 +28,6 @@ export const initialState = {
   colorArray: [],
   saturation: 0.8,
   lightness: 0.75,
-  colorHueMode: 'two-point scale',
+  colorHueMode: 'totally-random RGB',
   colorMode: 'rgb',
 };
