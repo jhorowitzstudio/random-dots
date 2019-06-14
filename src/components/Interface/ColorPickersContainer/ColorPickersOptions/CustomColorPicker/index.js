@@ -55,7 +55,7 @@ export default class extends React.Component {
         zIndex: '2'
       },
       cover: {
-        position: 'fixed',
+        display: 'none',
         top: '0px',
         right: '0px',
         bottom: '0px',
