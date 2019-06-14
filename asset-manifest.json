@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/random-dots/static/css/main.1666a583.chunk.css",
-    "main.js": "/random-dots/static/js/main.34cd1d0b.chunk.js",
-    "main.js.map": "/random-dots/static/js/main.34cd1d0b.chunk.js.map",
+    "main.js": "/random-dots/static/js/main.0ce542dd.chunk.js",
+    "main.js.map": "/random-dots/static/js/main.0ce542dd.chunk.js.map",
     "runtime~main.js": "/random-dots/static/js/runtime~main.b6bd2873.js",
     "runtime~main.js.map": "/random-dots/static/js/runtime~main.b6bd2873.js.map",
     "static/css/2.20d67eb1.chunk.css": "/random-dots/static/css/2.20d67eb1.chunk.css",
     "static/js/2.540f7fe2.chunk.js": "/random-dots/static/js/2.540f7fe2.chunk.js",
     "static/js/2.540f7fe2.chunk.js.map": "/random-dots/static/js/2.540f7fe2.chunk.js.map",
     "index.html": "/random-dots/index.html",
-    "precache-manifest.326e5d47eff616b414cddc2eea947c17.js": "/random-dots/precache-manifest.326e5d47eff616b414cddc2eea947c17.js",
+    "precache-manifest.e2d23c16fc1248b38f022c2dd94835f6.js": "/random-dots/precache-manifest.e2d23c16fc1248b38f022c2dd94835f6.js",
     "service-worker.js": "/random-dots/service-worker.js",
     "static/css/2.20d67eb1.chunk.css.map": "/random-dots/static/css/2.20d67eb1.chunk.css.map",
     "static/css/main.1666a583.chunk.css.map": "/random-dots/static/css/main.1666a583.chunk.css.map"
