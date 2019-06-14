@@ -1,11 +1,5 @@
 import React from 'react';
 
-const styles = {
-  select: {
-    margin: 10
-  }
-};
-
 export default props => {
   const {
     noLeftMargin,
